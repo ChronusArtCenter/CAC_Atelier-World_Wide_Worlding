@@ -4,16 +4,16 @@ Repository for the CAC Atelier World Wide Worlding workshop held at Chronus Art 
 
 # Repo Structure
 
-| [root]
-|── Gallery - Contains a html template for viewing participants works, note this page relies on Glitch.com, so will stop working Juli 8th 2025
-    |── index.html
-|── Works - Folder containing back ups of participants source code and assets
-	|── Participant
-		|── assets
-		|── index.html
-| poster.png - The event poster
-| LICENSE
-| README.md - This file
+| [root]  
+|── Gallery - Contains a html template for viewing participants works, note this page relies on Glitch.com, so will stop working Juli 8th 2025  
+    |── index.html  
+|── Works - Folder containing back ups of participants source code and assets  
+	|── Participant  
+		|── assets  
+		|── index.html  
+| poster.png - The event poster  
+| LICENSE  
+| README.md - This file  
 
 
 # Workshop Description
