@@ -16,6 +16,10 @@ Repository for the CAC Atelier World Wide Worlding workshop held at Chronus Art 
 | README.md - This file  
 
 
+# Viewing the works
+Just download Gallery/index.html to your local machine and open in your local browser.
+To view the projects locally you will want to start a local server, simplest is to download/clone this repo, using the terminal to navigate to a work you want to see and run 'python3 -m http.server'. This will start a local server that allows you to view the work in your browser at 'localhost:8000'.
+
 # Workshop Description
 
 [EN] “Worlding” is not merely a technique for constructing space—it is a practice of sensing, relating, and opening up new possibilities for reality. Emerging from feminist and posthuman media theory, worlding suggests that the world is not pre-given, but continually generated through perception, collaboration, and mediation.The browser, then, is not just an interface—but a site of emergence. It is where stray light, ambient noise, and overlooked textures can become materials for new world-building. Here, sensing becomes composing.In this workshop, participants will use smartphones and laptops to sample sounds and visuals from their own surroundings, and collaboratively construct an immersive, browser-based 3D environment using tools like A-Frame and Three.js.And perhaps, in the process, you might hear a cricket in your browser. It’s not an error—it’s the real, tapping at the edge of the virtual..As bodies, environments, and digital logics entangle, a collectively sensed and collectively generated world quietly takes form.
