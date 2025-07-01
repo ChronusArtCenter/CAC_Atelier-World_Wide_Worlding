@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js">
+  </script>
+ </head>
+ <body>
+  <a-scene fog="type: exponential; color: #cbc8e3; density: 0.02">
+   <a-assets>
+    <a-asset-item id="water" src="assets/水池.glb">
+    </a-asset-item>
+    <a-asset-item id="pearl" src="assets/Untitled_Scan_16_26_22.gltf">
+    </a-asset-item>
+    <a-asset-item id="shell" src="assets/Untitled_Scan_16_38_04.gltf">
+    </a-asset-item>
+    <a-asset-item id="table" src="assets/Untitled_Scan_16_40_38.gltf">
+    </a-asset-item>
+    <a-asset-item id="chair" src="assets/椅子.glb">
+    </a-asset-item>
+    <audio id="watersound" src="assets/水流声.mp3">
+    </audio>
+    <audio id="pearlsound" src="assets/444653__felixblume__rumors-from-the-sea-recording-of-a-sound-installation-in-the-sea.mp3">
+    </audio>
+    <audio id="chairsound" src="assets/蝉鸣2.mp3">
+    </audio>
+   </a-assets>
+   <a-entity camera="active: true" look-controls="" position="0 1.5 0" wasd-controls="">
+   </a-entity>
+   <a-entity cursor="rayOrigin: mouse">
+   </a-entity>
+   <a-plane id="ground" position="0 -1.5 0" rotation="-90 0 0" scale="100 100 100" src="#groundtext">
+   </a-plane>
+   <a-entity class="clickable" gltf-model="#water" position="-3 1.5 -6" rotation="-2 -30 -1" scale="1 1 1" sound="src:#watersound; loop: false; volume: 50; on: click">
+   </a-entity>
+   <a-entity animation="property: rotation; dur: 10000;
+                dir: normal; loop: true; easing:linear;
+                from: 0 0 0;
+                to: 0 360 0" class="clickable" gltf-model="#pearl" id="cac" position="-2 1.2 -1" rotation="-3 78 0" scale="1 1 1" sound="src:#pearlsound; loop: false; volume: 50; on: click">
+   </a-entity>
+   <a-entity class="clickable" gltf-model="#shell" position="-3 7 -7" rotation="-3 -130 0" scale="5 5 5">
+   </a-entity>
+   <a-entity class="clickable" gltf-model="#table" position="-1 0.5 -3" rotation="-3 -130 0" scale="1 1 1">
+   </a-entity>
+   <a-entity class="clickable" gltf-model="#chair" position="0 0.3 -5" rotation="-1 43 -3" scale="1 1 1" sound="src:#chairsound; loop: false; volume: 50; on: click">
+   </a-entity>
+  </a-scene>
+ </body>
+</html>

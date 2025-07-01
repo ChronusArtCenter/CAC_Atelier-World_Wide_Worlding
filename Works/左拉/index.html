@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js">
+  </script>
+ </head>
+ <body>
+  <a-scene fog="type: exponential; color: #cbc8e3; density: 0.02">
+   <a-assets>
+    <a-asset-item id="duck" src="assets/duck.glb">
+    </a-asset-item>
+    <a-asset-item id="shelf" src="assets/2025_6_28 2.glb">
+    </a-asset-item>
+    <a-asset-item id="hand" src="assets/2025_6_28 4.glb">
+    </a-asset-item>
+    <a-asset-item id="hole" src="assets/2025_6_28 7.glb">
+    </a-asset-item>
+    <a-asset-item id="motorcycle" src="assets/2025_6_28 5.glb">
+    </a-asset-item>
+    <audio id="ducksound" src="assets/ducksound.mp3">
+    </audio>
+    <audio id="ambiencesound" src="assets/BROWNIE-Project gallery.mp3">
+    </audio>
+    <audio id="dingding" src="assets/Pode Gallery Bird Art Space.mp3">
+    </audio>
+   </a-assets>
+   <a-entity camera="active: true" look-controls="" position="0 1.5 0" wasd-controls="">
+   </a-entity>
+   <a-entity cursor="rayOrigin: mouse">
+   </a-entity>
+   <a-plane id="ground" position="0 -1.5 0" rotation="-90 0 0" scale="100 100 100" src="#groundtext">
+   </a-plane>
+   <a-entity animation__hover="property: scale; startEvents: mouseenter; to: 10 10 50; dur: 100" animation__leave="property: scale; startEvents: mouseleave; to: 10 10 10; dur: 100" class="clickable" gltf-model="#duck" id="cac" position="3 1 2" rotation="11.5 125 2.55" scale="5 5 5" sound="src:#ducksound; loop: false; volume: 50; on: click">
+   </a-entity>
+   <a-entity class="clickable" gltf-model="#shelf" id="shelf" position="1 0 0" rotation="1 0.30 0" scale="1 1 1" sound="src:#ambiencesound; loop: false; volume: 50; on: click">
+   </a-entity>
+   <a-entity class="clickable" gltf-model="#motorcycle" id="motorcycle" position="1 0 0" rotation="1 0.30 0" scale="1 1 1" sound="src:#dingding; loop: false; volume: 110; on: click">
+   </a-entity>
+   <a-entity <="" a-entity="" class="clickable" gltf-model="#hand" id="hand" position="2 0 2" rotation="-2.791 123.693 77.196" scale="10 10 10">
+    <a-entity <="" a-entity="" class="clickable" gltf-model="#hole" id="hole" position="1.487 0.688 -0.612" rotation="4.238 124.300 -2.550" scale="0.1 0.1 0.1">
+    </a-entity>
+   </a-entity>
+  </a-scene>
+ </body>
+</html>

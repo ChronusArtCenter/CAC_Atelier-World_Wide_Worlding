@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js">
+  </script>
+ </head>
+ <body>
+  <a-scene fog="type: exponential; color: #cccccc; density: 0.005">
+   <a-assets>
+    <!-- Vaporwave textures and materials -->
+    <img id="gridTexture" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDUwIDAgTCAwIDAgMCA1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmYwMGZmIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPgo8L3N2Zz4="/>
+    <a-asset-item id="louti" src="assets/louti.glb">
+    </a-asset-item>
+    <a-asset-item id="miehuoqi" src="assets/miehuoqi.glb">
+    </a-asset-item>
+    <a-asset-item id="tiexiang" src="assets/tiexiang.glb">
+    </a-asset-item>
+    <audio id="miehuoqisound" src="assets/ZOOM0017_TrLR.WAV">
+    </audio>
+    <audio id="loutisound" src="assets/ZOOM0015_TrLR.WAV">
+    </audio>
+    <audio id="tiexiangsound" src="assets/ZOOM0016_TrLR.WAV">
+    </audio>
+   </a-assets>
+   <!-- Natural lighting for accurate model colors -->
+   <a-light color="#ffffff" intensity="0.6" type="ambient">
+   </a-light>
+   <a-light color="#ffffff" intensity="0.8" position="2 4 5" type="directional">
+   </a-light>
+   <a-light color="#ffffff" intensity="0.5" position="-2 3 2" type="point">
+   </a-light>
+   <!-- Vaporwave lighting for decorative elements only -->
+   <a-light color="#ff00ff" intensity="0.3" position="-15 5 -10" type="point">
+   </a-light>
+   <a-light color="#00ffff" intensity="0.3" position="15 5 -10" type="point">
+   </a-light>
+   <a-light color="#ffff00" intensity="0.2" position="0 8 -20" type="point">
+   </a-light>
+   <a-entity camera="active: true" look-controls="" position="0 1.5 0" wasd-controls="">
+   </a-entity>
+   <a-entity cursor="rayOrigin: mouse">
+   </a-entity>
+   <!-- Vaporwave grid floor -->
+   <a-plane id="ground" material="transparent: true; opacity: 0.8" position="0 -1.5 0" rotation="-90 0 0" scale="100 100 100" src="#gridTexture">
+   </a-plane>
+   <!-- Background mountains -->
+   <a-triangle color="#663399" material="transparent: true; opacity: 0.7" position="0 1 -20" scale="8 4 1">
+   </a-triangle>
+   <a-triangle color="#9933cc" material="transparent: true; opacity: 0.6" position="-10 1.5 -18" scale="6 3 1">
+   </a-triangle>
+   <a-triangle color="#4d0066" material="transparent: true; opacity: 0.8" position="12 0.8 -22" scale="10 5 1">
+   </a-triangle>
+   <!-- Palm tree silhouettes -->
+   <a-cylinder color="#1a0033" height="6" position="-8 0 -15" radius="0.3">
+   </a-cylinder>
+   <a-sphere color="#1a0033" position="-8 3 -15" radius="2" scale="1 0.3 1">
+   </a-sphere>
+   <a-cylinder color="#1a0033" height="5" position="10 0 -12" radius="0.25">
+   </a-cylinder>
+   <a-sphere color="#1a0033" position="10 2.5 -12" radius="1.5" scale="1 0.3 1">
+   </a-sphere>
+   <!-- Floating neon geometric shapes -->
+   <a-torus animation="property: rotation; to: 0 360 0; loop: true; dur: 8000" color="#ff00ff" material="shader: standard; emissive: #ff00ff; emissiveIntensity: 0.5" position="4 2 -8" radius="1" radius-tubular="0.1">
+   </a-torus>
+   <a-octahedron animation="property: rotation; to: 360 360 0; loop: true; dur: 10000" color="#00ffff" material="shader: standard; emissive: #00ffff; emissiveIntensity: 0.4" position="-6 3 -6" radius="0.8">
+   </a-octahedron>
+   <a-dodecahedron animation="property: position; to: 7 2.5 -4; dir: alternate; loop: true; dur: 3000" color="#ffff00" material="shader: standard; emissive: #ffff00; emissiveIntensity: 0.3" position="7 1.5 -4" radius="0.6">
+   </a-dodecahedron>
+   <!-- Neon triangular prisms -->
+   <a-triangle animation="property: rotation; to: 0 0 405; loop: true; dur: 12000" color="#ff0080" material="shader: standard; emissive: #ff0080; emissiveIntensity: 0.6; transparent: true; opacity: 0.8" position="3 4 -10" rotation="0 0 45" scale="2 2 1">
+   </a-triangle>
+   <a-triangle animation="property: rotation; to: 0 0 330; loop: true; dur: 15000" color="#8000ff" material="shader: standard; emissive: #8000ff; emissiveIntensity: 0.5; transparent: true; opacity: 0.7" position="-4 1 -3" rotation="0 0 -30" scale="1.5 1.5 1">
+   </a-triangle>
+   <!-- Floating cubes with wireframe effect -->
+   <a-box animation="property: rotation; to: 360 360 360; loop: true; dur: 6000" color="#ff00ff" material="wireframe: true; wireframeLinewidth: 3" position="6 3.5 2" scale="0.8 0.8 0.8">
+   </a-box>
+   <a-box animation="property: rotation; to: -360 360 -360; loop: true; dur: 9000" color="#00ff80" material="wireframe: true; wireframeLinewidth: 2" position="-5 2.5 4" scale="1.2 1.2 1.2">
+   </a-box>
+   <!-- Neon rings -->
+   <a-ring animation="property: rotation; to: 90 360 0; loop: true; dur: 7000" color="#ff0040" material="shader: standard; emissive: #ff0040; emissiveIntensity: 0.7; side: double" position="2 5 -6" radius-inner="1" radius-outer="1.3" rotation="90 0 0">
+   </a-ring>
+   <a-ring animation="property: rotation; to: 405 405 360; loop: true; dur: 11000" color="#40ff00" material="shader: standard; emissive: #40ff00; emissiveIntensity: 0.6; side: double" position="-3 4.5 -2" radius-inner="0.7" radius-outer="1" rotation="45 45 0">
+   </a-ring>
+   <!-- Crystalline structures -->
+   <a-cone animation="property: position; to: 8 1.8 6; dir: alternate; loop: true; dur: 4000" color="#ff8000" height="2" material="shader: standard; emissive: #ff8000; emissiveIntensity: 0.4; transparent: true; opacity: 0.8" position="8 1 6" radius-bottom="0.5" radius-top="0.1">
+   </a-cone>
+   <a-cone animation="property: rotation; to: 0 360 0; loop: true; dur: 8000" color="#8000ff" height="1.5" material="shader: standard; emissive: #8000ff; emissiveIntensity: 0.5; transparent: true; opacity: 0.9" position="-7 1.2 3" radius-bottom="0.4" radius-top="0.05">
+   </a-cone>
+   <!-- Floating spheres -->
+   <a-sphere animation="property: position; to: 5 4 -2; dir: alternate; loop: true; dur: 5000" color="#ff4080" material="shader: standard; emissive: #ff4080; emissiveIntensity: 0.8" position="5 6 -2" radius="0.3">
+   </a-sphere>
+   <a-sphere animation="property: position; to: -2 3.5 8; dir: alternate; loop: true; dur: 6000" color="#4080ff" material="shader: standard; emissive: #4080ff; emissiveIntensity: 0.7" position="-2 5.5 8" radius="0.4">
+   </a-sphere>
+   <!-- Neon text/signs -->
+   <a-text align="center" animation="property: rotation; to: 0 5 0; dir: alternate; loop: true; dur: 8000" color="#ff00ff" font="kelsonsans" geometry="primitive: plane; width: 8; height: 2" material="shader: standard; emissive: #ff00ff; emissiveIntensity: 0.6; transparent: true; opacity: 0.9" position="0 6 -25" value="RETROWAVE">
+   </a-text>
+   <!-- Additional vaporwave elements -->
+   <!-- Neon grid walls -->
+   <a-plane animation="property: rotation; to: 0 -90 360; loop: true; dur: 20000" color="#ff00aa" material="wireframe: true; wireframeLinewidth: 2; transparent: true; opacity: 0.4" position="15 3 0" rotation="0 -90 0" scale="20 8 1">
+   </a-plane>
+   <a-plane animation="property: rotation; to: 0 90 -360; loop: true; dur: 18000" color="#00aaff" material="wireframe: true; wireframeLinewidth: 2; transparent: true; opacity: 0.4" position="-15 3 0" rotation="0 90 0" scale="20 8 1">
+   </a-plane>
+   <!-- Floating holographic panels -->
+   <a-plane animation="property: position; to: 3 4 5; dir: alternate; loop: true; dur: 4500" color="#ff0066" material="shader: standard; emissive: #ff0066; emissiveIntensity: 0.3; transparent: true; opacity: 0.6" position="3 3 5" rotation="0 -30 0" scale="2 1.5 1">
+   </a-plane>
+   <a-plane animation="property: rotation; to: 0 405 0; loop: true; dur: 13000" color="#66ff00" material="shader: standard; emissive: #66ff00; emissiveIntensity: 0.4; transparent: true; opacity: 0.7" position="-4 2.5 7" rotation="0 45 0" scale="1.8 1.2 1">
+   </a-plane>
+   <!-- Laser beam effects -->
+   <a-cylinder animation="property: rotation; to: 0 360 90; loop: true; dur: 5000" color="#ff0040" height="12" material="shader: standard; emissive: #ff0040; emissiveIntensity: 0.9; transparent: true; opacity: 0.8" position="0 0.5 -8" radius="0.05" rotation="0 0 90">
+   </a-cylinder>
+   <a-cylinder animation="property: rotation; to: 405 360 0; loop: true; dur: 7000" color="#40ff80" height="8" material="shader: standard; emissive: #40ff80; emissiveIntensity: 0.8; transparent: true; opacity: 0.7" position="9 1 -2" radius="0.03" rotation="45 0 0">
+   </a-cylinder>
+   <!-- Floating diamonds -->
+   <a-octahedron animation="property: rotation; to: 360 360 360; loop: true; dur: 6000" color="#ff8040" material="shader: standard; emissive: #ff8040; emissiveIntensity: 0.6" position="1 4.5 3" radius="0.4">
+   </a-octahedron>
+   <a-octahedron animation="property: position; to: -6 6 1; dir: alternate; loop: true; dur: 3500" color="#8040ff" material="shader: standard; emissive: #8040ff; emissiveIntensity: 0.7" position="-6 5 1" radius="0.3">
+   </a-octahedron>
+   <!-- Neon archways -->
+   <a-torus animation="property: rotation; to: 0 360 0; loop: true; dur: 15000" color="#ff0080" material="shader: standard; emissive: #ff0080; emissiveIntensity: 0.6" position="0 2 10" radius="3" radius-tubular="0.1" rotation="0 0 0">
+   </a-torus>
+   <!-- Energy orbs -->
+   <a-sphere animation="property: scale; to: 1.5 1.5 1.5; dir: alternate; loop: true; dur: 2500" color="#00ff80" material="shader: standard; emissive: #00ff80; emissiveIntensity: 0.9" position="12 3 -8" radius="0.5">
+   </a-sphere>
+   <a-sphere animation="property: rotation; to: 360 360 0; loop: true; dur: 4000" color="#8000ff" material="shader: standard; emissive: #8000ff; emissiveIntensity: 0.8" position="-10 2 -5" radius="0.4">
+   </a-sphere>
+   <!-- Particle-like small spheres -->
+   <a-sphere animation="property: position; to: 6 3 6; dir: alternate; loop: true; dur: 6000" color="#ff4080" material="shader: standard; emissive: #ff4080; emissiveIntensity: 1.0" position="8 5 8" radius="0.1">
+   </a-sphere>
+   <a-sphere animation="property: position; to: -10 6 7; dir: alternate; loop: true; dur: 5500" color="#40ff80" material="shader: standard; emissive: #40ff80; emissiveIntensity: 1.0" position="-8 4 9" radius="0.1">
+   </a-sphere>
+   <a-sphere animation="property: position; to: 9 4 1; dir: alternate; loop: true; dur: 4800" color="#8040ff" material="shader: standard; emissive: #8040ff; emissiveIntensity: 1.0" position="11 6 -1" radius="0.1">
+   </a-sphere>
+   <!-- Additional sun/moon -->
+   <a-sphere color="#ff6600" material="shader: standard; emissive: #ff6600; emissiveIntensity: 0.4; transparent: true; opacity: 0.8" position="0 12 -30" radius="3">
+   </a-sphere>
+   <a-entity class="clickable" gltf-model="https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/miehuoqi.glb?v=1751097262146" position="-3.56235 2.10306 1.68302" rotation="11.5 125.00000000000001 2.55" scale="6 6 6" sound="on: click; src: https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/ZOOM0017_TrLR.WAV?v=1751098175490; volume: 50">
+   </a-entity>
+   <a-entity animation__hover="dur: 100; property: scale; startEvents: mouseenter; to: 1.5 1.5 1.5" animation__leave="dur: 100; property: scale; startEvents: mouseleave; to: 1 1 1" class="clickable" gltf-model="https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/louti.glb?v=1751097245091" position="-2.008 0.184 0.02" rotation="11.5 125.00000000000001 2.55" sound="on: click; src: https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/ZOOM0015_TrLR.WAV?v=1751098350425; volume: 50">
+   </a-entity>
+   <a-entity animation__hover="dur: 100; property: scale; startEvents: mouseenter; to: 1.5 1.5 1.5" animation__leave="dur: 100; property: scale; startEvents: mouseleave; to: 1 1 1" class="clickable" gltf-model="https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/tiexiang.glb?v=1751097274961" position="-1.30173 -0.06271 -0.4114" rotation="0 125.00000000000001 2.55" scale="2 2 2" sound="on: click; src: https://cdn.glitch.global/c0349a3d-7195-41e2-b23a-d95a7f538774/ZOOM0016_TrLR.WAV?v=1751098389464; volume: 50">
+   </a-entity>
+  </a-scene>
+ </body>
+</html>

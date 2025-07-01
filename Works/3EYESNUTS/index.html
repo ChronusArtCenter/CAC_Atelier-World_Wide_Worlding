@@ -1,0 +1,40 @@
+<html>
+ <head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js">
+  </script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js">
+  </script>
+  <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js">
+  </script>
+ </head>
+ <body>
+  <a-scene fog="type: exponential; color: #8a1f1f; density: 0.1">
+   <a-sky color="#8a1f1f">
+   </a-sky>
+   <a-assets>
+    <a-asset-item id="cat" src="assets/an_animated_cat.glb">
+    </a-asset-item>
+    <a-asset-item id="cat2" src="assets/oiiaioooooiai_cat.glb">
+    </a-asset-item>
+    <a-asset-item id="cat3" src="assets/maxwell_the_cat_with_bones_animation.glb">
+    </a-asset-item>
+    <a-asset-item id="bg" src="assets/Scaniverse 2025-02-28 175007.glb">
+    </a-asset-item>
+    <audio id="catsound" src="assets/old_cat3.mp3">
+    </audio>
+   </a-assets>
+   <a-entity camera="active: true" look-controls="" position="0 1.5 7" rotation="60 -71 60" wasd-controls="">
+   </a-entity>
+   <a-entity cursor="rayOrigin: mouse">
+   </a-entity>
+   <a-gltf-model scale="1 1 1" src="#bg">
+   </a-gltf-model>
+   <a-gltf-model animation-mixer="" position="-1 0 0" scale="1 1 1" src="#cat2">
+   </a-gltf-model>
+   <a-gltf-model animation-mixer="" position="-2.092 0.327 1.884" scale="0.7 0.7 0.7" src="#cat3">
+   </a-gltf-model>
+   <a-entity animation-mixer="" animation__hover="property: scale; startEvents: mouseenter; to: 0.7 0.7 0.7; dur: 100" animation__leave="property: scale; startEvents: mouseleave; to: 0.7 0.7 0.7; dur: 100" class="clickable" gltf-model="#cat" position="-0.12 0.240 -4.217" rotation="0 -71 0" scale="1.5 1.5 1.5" sound="src:#catsound; loop: false; volume: 50; on: click">
+   </a-entity>
+  </a-scene>
+ </body>
+</html>

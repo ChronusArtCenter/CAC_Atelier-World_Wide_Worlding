@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js">
+  </script>
+ </head>
+ <body>
+  <a-assets>
+   <a-asset-item id="door" src="assets/CAC Door.glb">
+   </a-asset-item>
+   <a-asset-item id="cafe" src="assets/M50-cafe.glb">
+   </a-asset-item>
+   <a-asset-item id="holes" src="assets/Holes.glb">
+   </a-asset-item>
+   <a-asset-item id="street" src="assets/M50-1.glb">
+   </a-asset-item>
+   <audio id="ducksound" src="assets/door-sound.mp3">
+   </audio>
+   <audio id="pcsound" src="assets/pc.mp3">
+   </audio>
+  </a-assets>
+  <a-scene fog="type: exponential; color: #00B3DF; density: 0.08">
+   <a-sky src="#sky">
+   </a-sky>
+   <a-entity camera="active: true" look-controls="" position="0 1.5 0" wasd-controls="">
+   </a-entity>
+   <a-entity cursor="rayOrigin: mouse">
+   </a-entity>
+   <a-plane id="ground" position="0 -1.5 0" rotation="-90 0 0" scale="100 100 100" src="#groundtext">
+   </a-plane>
+   <a-entity animation__hover="property: scale; startEvents: mouseenter; to: 1.2 1.2 1.2; dur: 100" animation__leave="property: scale; startEvents: mouseleave; to: 1 1 1; dur: 1000" class="clickable" gltf-model="#door" position="0 0 -6" rotation="0 -70 0" scale="1 1 1" sound="src:#ducksound; loop: false; volume: 10; on: click">
+   </a-entity>
+   <a-entity animation="property: rotation; dur: 10000;
+            dir: normal; loop: true; easing:linear;
+            from: 0 0 0;
+            to: 0 360 0" animation__hover="property: scale; startEvents: mouseenter; to: 3 12 3; dur: 100" animation__leave="property: scale; startEvents: mouseleave; to: 3 3 3; dur: 100" class="clickable" gltf-model="#holes" position=".5 -0.5 -4.5" rotation="0 90 0" scale="5 5 5" sound="src:#pcsound; loop:false;volume:50;on:click">
+   </a-entity>
+  </a-scene>
+ </body>
+</html>
