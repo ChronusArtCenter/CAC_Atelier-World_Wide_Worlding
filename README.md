@@ -29,4 +29,4 @@ To view the projects locally you will want to start a local server, simplest is 
 
 # More info
 
-![Chronus Art Center](https://www.chronusartcenter.org)
+![Chronus Art Center](https://chronusartcenter.org/zh/public_programs/cac-atelier-hunshengshijiewangyeduanchenjin3dgongzuofang/)
